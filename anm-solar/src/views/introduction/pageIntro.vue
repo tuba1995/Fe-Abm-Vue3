@@ -13,9 +13,7 @@ const product = ref([]); // Khởi tạo với giá trị ban đầu, ví dụ, 
 const store = useStore();
 const round = computed(() => store.state.productStore.product);
 
-
 async function fetchProductAllStore() {
-  console.log(store);
   await store.dispatch("productStore/getProduct"); // Dispatch action đúng
 }
 
