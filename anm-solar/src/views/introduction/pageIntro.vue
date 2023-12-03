@@ -12,10 +12,7 @@ import { useStore } from "vuex";
 const product = ref([]); // Khởi tạo với giá trị ban đầu, ví dụ, một mảng rỗng.
 const store = useStore();
 const round = computed(() => store.state.productStore.product);
-async function fetchProductAll() {
-  const res = await ProductApi.getProduct();
-  console.log("3111", res);
-}
+
 
 async function fetchProductAllStore() {
   console.log(store);
@@ -24,7 +21,6 @@ async function fetchProductAllStore() {
 
 computed;
 onMounted(() => {
-  fetchProductAll();
   fetchProductAllStore();
 });
 </script>
