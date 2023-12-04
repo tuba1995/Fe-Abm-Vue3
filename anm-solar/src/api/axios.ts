@@ -1,6 +1,7 @@
 import axios from "axios";
+import store from "@/store";
 const HTTP = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com",
+  baseURL: process.env.VUE_APP_API_HOST,
   headers: {
     "Access-Control-Allow-Origin": "*",
     "Content-Type": "application/json",
@@ -11,9 +12,11 @@ const HTTP = axios.create({
 // Add a request interceptor
 HTTP.interceptors.request.use(
   function (config) {
+    store.dispatch("commonStore/setLoading", true);
     return config;
   },
   function (error) {
+    store.dispatch("commonStore/setLoading", false);
     return Promise.reject(error);
   }
 );
@@ -21,9 +24,11 @@ HTTP.interceptors.request.use(
 // Add a response interceptor
 HTTP.interceptors.response.use(
   function (response) {
+    store.dispatch("commonStore/setLoading", false);
     return response;
   },
   function (error) {
+    store.dispatch("commonStore/setLoading", false);
     return Promise.reject(error);
   }
 );

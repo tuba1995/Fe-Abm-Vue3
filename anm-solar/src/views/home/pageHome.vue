@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1 class="hihi text-3xl font-bold underline">Hello world!</h1>
     <Slider />
   </div>
 </template>
@@ -10,12 +9,13 @@ import ProductApi from "@/api/product";
 import Slider from "@/views/home/component/Slider.vue";
 import { ref, onMounted, computed } from "vue";
 import { useStore } from "vuex";
-const product = ref([]); // Khởi tạo với giá trị ban đầu, ví dụ, một mảng rỗng.
+import { Product, ListReponsive } from "@/modules/index";
+const product = ref<Product[]>([]);
 const store = useStore();
 const round = computed(() => store.state.productStore.product);
 async function fetchProductAll() {
-  const res = await ProductApi.getProduct();
-  console.log("3111", res);
+  const res: ListReponsive<Product> = await ProductApi.getProduct();
+  product.value = res.data;
 }
 
 async function fetchProductAllStore() {

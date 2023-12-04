@@ -1,6 +1,14 @@
-// tailwind 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
+// tailwind
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+// layout
+@import "@/assets/scss/layout/_header.scss";
+//
 @import "@/assets/scss/pages/home.scss";
+@font-face {
+  font-family: "Inter";
+  src: url("@/assets/font/inter/Inter-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

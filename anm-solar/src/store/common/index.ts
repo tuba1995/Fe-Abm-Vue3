@@ -1,7 +1,7 @@
 import mutations from "./mutations";
 import actions from "./actions";
 import getters from "./getters";
-const userStore = {
+const commonStore = {
   namespaced: true,
   state: {
     isLoading: false,
@@ -10,4 +10,4 @@ const userStore = {
   actions,
   getters,
 };
-export default userStore;
+export default commonStore;

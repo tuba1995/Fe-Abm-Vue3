@@ -1,7 +1,7 @@
 export default [
   {
-    path: "/gioi-thieu",
-    name: "Giới Thiệu",
+    path: "/tuy-dai-ly",
+    name: "Tuyển đại lý",
     component: () => import("@/views/introduction/pageIntro.vue"),
     meta: {
       showInMenu: true,
