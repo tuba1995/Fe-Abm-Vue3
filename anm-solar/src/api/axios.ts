@@ -25,7 +25,7 @@ HTTP.interceptors.request.use(
 HTTP.interceptors.response.use(
   function (response) {
     store.dispatch("commonStore/setLoading", false);
-    return response;
+    return response.data;
   },
   function (error) {
     store.dispatch("commonStore/setLoading", false);

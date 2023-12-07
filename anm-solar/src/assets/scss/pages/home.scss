@@ -1,6 +1,25 @@
-.home{
-    background-color: red;
+.home {
+  background-color: red;
 }
 *:focus {
-    outline: none;
+  outline: none;
+}
+.intro {
+  padding: 60px 0px 0px 0px;
+  background: #fff;
+  z-index: 10;
+}
+.video-common {
+  .col-inner {
+    h2 {
+      font-size: 25px;
+      font-weight: 700;
+      font-style: normal;
+      color: #081f41;
+    }
+    p {
+      color: #53637a;
+      line-height: 25px;
+    }
   }
+}

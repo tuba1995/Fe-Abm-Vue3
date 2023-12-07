@@ -5,6 +5,8 @@ const commonStore = {
   namespaced: true,
   state: {
     isLoading: false,
+    isLoadingRefresh: false,
+    video: [],
   },
   mutations,
   actions,
